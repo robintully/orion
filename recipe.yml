@@ -23,7 +23,7 @@ stages:
 
   # Put your custom actions behind this comment
 
-  - name: example-packages # Sample module using the built-in Apt module to install packages
+  - name: apt-packages # Sample module using the built-in Apt module to install packages
     type: apt
     source:
       packages:
@@ -32,16 +32,14 @@ stages:
       - fish
       - podman
       
-  - name: github_cli
-    type: shell
-    commands:
-      - (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
-        && sudo mkdir -p -m 755 /etc/apt/keyrings \
-        && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-        && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-        && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-        && sudo apt update \
-        && sudo apt install gh -y
+
+  - name: dnf-packages # Sample module using the built-in Apt module to install packages
+    type: dnf
+    source:
+      packages:
+      - gh
+      
+        
   - name: chezmoi
     type: shell
     commands:
