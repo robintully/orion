@@ -28,7 +28,13 @@ stages:
     source:
       packages:
       - vim
+      - just
 
+  - name: chezmoi
+    type: shell
+    commands:
+      - sh -c "$(curl -fsLS get.chezmoi.io)
+  
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
     commands:
