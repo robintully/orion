@@ -29,6 +29,7 @@ stages:
       packages:
       - vim
       - just
+      - fish
 
   - name: chezmoi
     type: shell
