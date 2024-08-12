@@ -30,6 +30,7 @@ stages:
       - vim
       - just
       - fish
+      - podman
       
   - name: github_cli
     type: shell
