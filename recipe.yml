@@ -31,14 +31,7 @@ stages:
       - just
       - fish
       - podman
-      
-
-  - name: dnf-packages # Sample module using the built-in Apt module to install packages
-    type: dnf
-    source:
-      packages:
       - gh
-      
         
   - name: chezmoi
     type: shell
