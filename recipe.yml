@@ -33,7 +33,6 @@ stages:
             - podman
             - gh
             - fuzzel
-            - hyprland
 
       - name: shell installations
         type: shell
