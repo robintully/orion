@@ -2,7 +2,7 @@ name: Orion Desktop
 id: orion # Replace this ID with your image ID
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/nvidia:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
+  base: ghcr.io/vanilla-os/nvidia-exp:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
   singlelayer: false
   labels:
     maintainer: self-maintained # Optionally, Replace this with your name
@@ -38,7 +38,6 @@ stages:
     type: shell
     commands:
       - sh -c "$(curl -fsLS get.chezmoi.io)" #chezmoi
-      - curl -f https://zed.dev/install.sh | sh #zed
   
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
