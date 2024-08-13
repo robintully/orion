@@ -34,17 +34,11 @@ stages:
       - gh
 
 
-  - name: zed-packages # Sample module using the built-in Apt module to install packages
-    type: dnf
-    source:
-      packages:
-      - zed
-      
   - name: shell installations
     type: shell
     commands:
-      - sh -c "$(curl -fsLS get.chezmoi.io)"
-      - curl -f https://zed.dev/install.sh | sh
+      - sh -c "$(curl -fsLS get.chezmoi.io)" #chezmoi
+      - curl -f https://zed.dev/install.sh | sh #zed
   
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
