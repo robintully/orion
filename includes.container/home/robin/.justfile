@@ -19,4 +19,5 @@ install_flatpaks:
                       com.bitwarden.desktop \
                       com.todoist.Todoist \
                       md.obsidian.Obsidian \
-                      org.ferdium.Ferdium
+                      org.ferdium.Ferdium \
+                      io.freetubeapp.FreeTube
