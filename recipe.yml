@@ -40,10 +40,11 @@ stages:
       packages:
       - zed
       
-  - name: chezmoi
+  - name: shell installations
     type: shell
     commands:
       - sh -c "$(curl -fsLS get.chezmoi.io)"
+      - curl -f https://zed.dev/install.sh | sh
   
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
