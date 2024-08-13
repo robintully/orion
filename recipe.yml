@@ -32,7 +32,14 @@ stages:
       - fish
       - podman
       - gh
-        
+
+
+  - name: zed-packages # Sample module using the built-in Apt module to install packages
+    type: dnf
+    source:
+      packages:
+      - zed
+      
   - name: chezmoi
     type: shell
     commands:
